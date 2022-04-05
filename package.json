@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "homework13_socialnetworkapi",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhodge166/socialNetworkApi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhodge166/socialNetworkApi/issues"
+  },
+  "homepage": "https://github.com/bhodge166/socialNetworkApi#readme"
+}
