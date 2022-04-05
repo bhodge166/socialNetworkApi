@@ -1,17 +1,19 @@
 {
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.2.10",
-    "nodemon": "^2.0.15"
+    "mongoose": "^6.2.10"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node utils/seed.js"
   },
   "name": "homework13_socialnetworkapi",
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bhodge166/socialNetworkApi.git"
