@@ -47,7 +47,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  createFriend(req, res) {
+  addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { friends: req.params.friendId } },
