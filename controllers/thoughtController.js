@@ -19,7 +19,7 @@ module.exports = {
   createThought(req, res) {
     Thought.create(req.body)
       .then((thought) => {
-        User.findOneAndUpdate(
+        return User.findOneAndUpdate(
           { username: thought.username },
           { $push: { thoughts: thought._id } },
           { new: true }
@@ -64,7 +64,7 @@ module.exports = {
       { $push: { reactions: req.body } },
       { new: true, runValidators: true }
     )
-      .populate({ path: "reactions", select: "-__v" })
+      .populate("reactions")
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought with this id!" })
@@ -72,10 +72,10 @@ module.exports = {
       )
       .catch((err) => res.json(err));
   },
-  deleteReaction() {
+  deleteReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: { reaction_id: req.params.reactionId } } },
+      { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { new: true }
     )
       .then((thought) =>
